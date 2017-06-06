@@ -1,4 +1,5 @@
 from flask import Flask
+import telebot
 app = Flask(__name__)
 
 @app.route("/")
@@ -10,9 +11,5 @@ def giuliano():
   return "Ciao Giuliano!"
 
 if __name__ == "__main__":
-  l = [1, 2, 3, 4, 5]
-  a, b, *c = l
-  
-  print(a, b, c)
   
   app.run()
