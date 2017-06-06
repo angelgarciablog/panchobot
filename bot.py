@@ -8,4 +8,4 @@ bot = telebot.TeleBot(environ['TELEGRAM_TOKEN'])
 def send_welcome(message):
 	bot.reply_to(message, "Howdy, how are you doing?")
   
-bot.set_webhook("https://{}.glitch.me/{}".format(environ['PROJECT_NAME'], environ['TELEGRAM_TOKEN']))
+# bot.set_webhook("https://{}.glitch.me/{}".format(environ['PROJECT_NAME'], environ['TELEGRAM_TOKEN']))

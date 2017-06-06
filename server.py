@@ -1,21 +1,17 @@
 import flask, telebot
 from bot import bot
 
-app = flask.Flask(__name__, static_url_path='')
+app = flask.Flask(__name__)
 
 WEBHOOK_URL_PATH = "/{}".format(bot.token)
 
+index = open('static/index.html').read()
 
 # Process index page
 @app.route('/')
 def root():
     print('index!')
-    return app.send_static_file('index.html')
-
-
-@app.route('/style.css')
-def style():
-  return app.send_static_fie('style.css')
+    return index # 'xd' # flask.send_from_directory('/static', 'index.html')
 
 
 # Process webhook calls
