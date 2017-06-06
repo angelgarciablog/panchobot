@@ -1,6 +1,6 @@
-from flask import Flask
+import flask, telebot
 from bot import bot
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
 WEBHOOK_URL_PATH = "/{}".format(bot.token)
 
@@ -14,7 +14,6 @@ def webhook():
         return ''
     else:
         flask.abort(403)
-
 
 if __name__ == "__main__":
   
