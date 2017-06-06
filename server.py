@@ -2,10 +2,9 @@ import flask, telebot
 from bot import bot
 
 app = flask.Flask(__name__)
-
 WEBHOOK_URL_PATH = "/{}".format(bot.token)
-
 index = open('static/index.html').read()
+
 
 # Process index page
 @app.route('/')
