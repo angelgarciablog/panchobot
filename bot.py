@@ -6,7 +6,7 @@ bot = telebot.TeleBot(environ['TELEGRAM_TOKEN'])
 
 bot_text = '''
 Howdy, how are you doing?
-Source code on https://glitch.com/~{}"
+Source code on https://glitch.com/~{}
 '''.format(environ['PROJECT_NAME'])
 
 @bot.message_handler(commands=['start', 'help'])
