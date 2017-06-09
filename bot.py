@@ -4,7 +4,10 @@ from os import environ
 bot = telebot.TeleBot(environ['TELEGRAM_TOKEN'])
 # print(bot.token)
 
-bot_text = "Howdy, how are you doing?\nSource code on https://glitch.com/~telegram-bot-python"
+bot_text = '''
+Howdy, how are you doing?
+Source code on https://glitch.com/~{}"
+'''.format(environ['PROJECT_NAME'])
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
