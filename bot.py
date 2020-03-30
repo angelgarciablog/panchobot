@@ -13,3 +13,4 @@ def send_welcome(message):
 	bot.reply_to(message, bot_text)
 
 bot.set_webhook("https://{}.glitch.me/{}".format(environ['PROJECT_NAME'], environ['TELEGRAM_TOKEN']))
+
