@@ -15,7 +15,18 @@ def send_welcome(message):
 def echo_message(message):
   cid = message.chat.id
   holas="hola","hl, mucho gusto","hola tanto tiempo sin verte", "hl, dime te puedo ayudar en algo?","hooola que tal tu dia"
-  if message.text.lower() == "hola":
+  if message.text.lower() == "hola" or "hla" or "hl":
     bot.send_message( cid, random.choice(holas))
+  
+@bot.message_handler(commands=["reglas"])
+def reglas(message):
+  bot.reply_to(message, "❗❗❗ *REGLAS* ❗❗❗\n
+✅ Enlaces no spam\n
+✅ Archivos sin virus\n
+❗❗Respetar a los miembros del grupo❗❗\n
+No porno, cp, gore, y similares \n
+🚫 Virus\n
+🚫 Cadenas con información falsa\n
+🚫 Molestar al privado")
 
 bot.set_webhook("https://{}.glitch.me/{}".format(environ['PROJECT_NAME'], environ['TELEGRAM_TOKEN']))
