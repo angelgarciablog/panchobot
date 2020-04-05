@@ -23,8 +23,7 @@ def echo_message(message):
   cid = message.chat.id
   buen_dia="buen dia que la pases bien","buen dia","buen dia precioso(a)","que dios bendiga tu dia"
   if message.text.lower() == "buenos dias" or "buen dia":
-    bot.send_message(cid, random.choice(buen dia)
-                     
+    bot.send_message(cid, random.choice(buen_dia))
   
 @bot.message_handler(commands=["reglas"])
 def reglas(message):
