@@ -21,13 +21,36 @@ def reglas_grupos(message):
 @bot.message_handler(func=lambda message: True)
 def echo_message(message):
   cid = message.chat.id
-  holas="hola","hl, mucho gusto","hola tanto tiempo sin verte", "hl, dime te puedo ayudar en algo?","hooola que tal tu dia"
-  if message.text.lower() == "hola" or "hla" or "hl":
-    bot.send_message( cid, random.choice(holas))
-  buen_dia="buen dia que la pases bien","buen dia","buen dia precioso(a)","que dios bendiga tu dia"
-  if message.text.lower() == "buenos dias" or "buen dia":
-    bot.send_message(cid, random.choice(buen_dia))
-  else:
-    None
+  while message.text.lower() not == "hola":
+    holas="hola","hl, mucho gusto","hola tanto tiempo sin verte", "hl, dime te puedo ayudar en algo?","hooola que tal tu dia"
+    if message.text.lower() == "hola" or "hla" or "hl":
+      bot.send_message( cid, random.choice(holas))
+
+    
+@bot.message_handler(func=lambda message: True, content_types=['new_chat_members'])
+def command_bienvenida(m):
+    cid = m.chat.id                                   
+    cname = m.chat.title                              
+    bienvenida = ""                                    
+
+    if (m.new_chat_member.username is None):          
+        nun = m.new_chat_member.first_name            
+
+        if (m.new_chat_member.last_name is not None): 
+            nun += " "                        
+            nun += m.new_chat_member.last_name         
+
+        else:                                          
+            bienvenida = "Bienvenido al grupo"         
+            bienvenida += str(cname)                   
+            bienvenida += " "
+    else:                                              
+        nun = m.new_chat_member.username               
+        bienvenida = "Bienvenido al grupo "            
+        bienvenida += str(cname)                      
+        bienvenida += " @"
+
+    bot.send_message(cid, str(bienvenida) + str(nun))
+
   
 bot.set_webhook("https://{}.glitch.me/{}".format(environ['PROJECT_NAME'], environ['TELEGRAM_TOKEN']))
