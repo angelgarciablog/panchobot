@@ -17,10 +17,6 @@ def echo_message(message):
   holas="hola","hl, mucho gusto","hola tanto tiempo sin verte", "hl, dime te puedo ayudar en algo?","hooola que tal tu dia"
   if message.text.lower() == "hola" or "hla" or "hl":
     bot.send_message( cid, random.choice(holas))
-  
-@bot.message_handler(func=lambda message: True)
-def echo_message(message):
-  cid = message.chat.id
   buen_dia="buen dia que la pases bien","buen dia","buen dia precioso(a)","que dios bendiga tu dia"
   if message.text.lower() == "buenos dias" or "buen dia":
     bot.send_message(cid, random.choice(buen_dia))
