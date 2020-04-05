@@ -27,5 +27,7 @@ def echo_message(message):
   buen_dia="buen dia que la pases bien","buen dia","buen dia precioso(a)","que dios bendiga tu dia"
   if message.text.lower() == "buenos dias" or "buen dia":
     bot.send_message(cid, random.choice(buen_dia))
+  else:
+    None
   
 bot.set_webhook("https://{}.glitch.me/{}".format(environ['PROJECT_NAME'], environ['TELEGRAM_TOKEN']))
