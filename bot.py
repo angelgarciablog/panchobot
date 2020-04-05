@@ -40,16 +40,16 @@ def command_bienvenida(m):
             nun += m.new_chat_member.last_name         
 
         else:                                          
-            bienvenida = "Bienvenido al grupo"         
+            bienvenida = "Bienvenido a "         
             bienvenida += str(cname)                   
-            bienvenida += " "
+            bienvenida += "  "
     else:                                              
         nun = m.new_chat_member.username               
         bienvenida = "Bienvenido al grupo "            
         bienvenida += str(cname)                      
         bienvenida += " @"
 
-    bot.send_message(cid, str(bienvenida) + str(nun)+"por favor lee las reglas usando el comando /reglas")
+    bot.send_message(cid, str(bienvenida) + str(nun)+"  por favor lee las reglas usando el comando /reglas")
 
   
 bot.set_webhook("https://{}.glitch.me/{}".format(environ['PROJECT_NAME'], environ['TELEGRAM_TOKEN']))
