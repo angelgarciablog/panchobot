@@ -21,10 +21,9 @@ def reglas_grupos(message):
 @bot.message_handler(func=lambda message: True)
 def echo_message(message):
   cid = message.chat.id
-  while message.text.lower() not == "hola":
-    holas="hola","hl, mucho gusto","hola tanto tiempo sin verte", "hl, dime te puedo ayudar en algo?","hooola que tal tu dia"
-    if message.text.lower() == "hola" or "hla" or "hl":
-      bot.send_message( cid, random.choice(holas))
+  holas="hola","hl, mucho gusto","hola tanto tiempo sin verte", "hl, dime te puedo ayudar en algo?","hooola que tal tu dia"
+  if message.text.lower() == "hola":
+    bot.send_message( cid, random.choice(holas))
 
     
 @bot.message_handler(func=lambda message: True, content_types=['new_chat_members'])
@@ -50,7 +49,7 @@ def command_bienvenida(m):
         bienvenida += str(cname)                      
         bienvenida += " @"
 
-    bot.send_message(cid, str(bienvenida) + str(nun))
+    bot.send_message(cid, str(bienvenida) + str(nun)+"por favor lee las reglas usando el comando /reglas")
 
   
 bot.set_webhook("https://{}.glitch.me/{}".format(environ['PROJECT_NAME'], environ['TELEGRAM_TOKEN']))
