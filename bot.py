@@ -17,6 +17,17 @@ def send_welcome(message):
 def reglas_grupos(message):
   bot.reply_to(message, reglas)
 
+
+@bot.message_handler(commands=['id','miid'])
+def miid(message):
+  cid = message.chat.id     
+  nombreUsuario = message.from_user.username  
+  idUsuario = message.from_user
+  bot.reply_to(message, "tu id " + str(nombreUsuario) + " es " + str(cid))
+
+
+
+
   
 
 @bot.message_handler(func=lambda message: True)            
