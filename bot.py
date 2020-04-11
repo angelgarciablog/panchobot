@@ -7,7 +7,7 @@ bot = telebot.TeleBot(environ['TELEGRAM_TOKEN'])
 bot_text = '''
 Bienvenido, este bot fue programado por Angel Garcia( @angelgarciablog ) para @whatsapp_beta'''
 
-reglas = "❗❗ *REGLAS* ❗❗❗✅\n\nEnlaces no spam\n✅ Archivos sin virus\n❗❗Respetar a los miembros del grupo❗❗\n\n🚫 No porno, cp, gore, y similares\n🚫 Virus\n🚫 Cadenas con información falsa\n🚫 Molestar al privado\n\nCualquier incumplimiento es motivo de expulsion permanente"
+reglas = "❗❗ *REGLAS* ❗❗❗✅\n\nEnlaces no spam\n✅ Archivos sin virus\n❗❗Respetar a los miembros del grupo❗❗\n\n🚫 No porno, cp, gore, y similares\n🚫 Virus\n🚫 Cadenas con información falsa\n🚫 Molestar al privado\nNo jugar con los comandos del bot\n\nCualquier incumplimiento es motivo de expulsion permanente"
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
@@ -18,12 +18,18 @@ def reglas_grupos(message):
   bot.reply_to(message, reglas)
 
   
-@bot.message_handler(func=lambda message: True)
+
+@bot.message_handler(func=lambda message: True)            
 def echo_message(message):
-  cid = message.chat.id
-  holas="hola","hl, mucho gusto","hola tanto tiempo sin verte", "hl, dime te puedo ayudar en algo?","hooola que tal tu dia"
-  if message.text.lower() == "hola":
-    bot.send_message( cid, random.choice(holas))
+    cid = message.chat.id
+    holas = "hola","hl, mucho gusto","hola tanto tiempo sin verte", "hl, dime te puedo ayudar en algo?","hooola que tal tu dia"
+    buen_dia="buen dia que la pases bien","buen dia","buen dia precioso(a)","que dios bendiga tu dia"
+    mt = message.text.lower()
+    if mt == "hola" or mt == "hl" or mt == "hla":
+      bot.send_message( cid, random.choice(holas))
+    if mt == "buenos dias" or mt == "buen dia" or mt == "hola buenos dias" or mt == "hola buenos dias":
+      bot.send_message( cid, random.choice(buen_dia))
+
 
     
 @bot.message_handler(func=lambda message: True, content_types=['new_chat_members'])
@@ -45,7 +51,7 @@ def command_bienvenida(m):
             bienvenida += "  "
     else:                                              
         nun = m.new_chat_member.username               
-        bienvenida = "Bienvenido al grupo "            
+        bienvenida = "Bienvenido a "            
         bienvenida += str(cname)                      
         bienvenida += " @"
 
