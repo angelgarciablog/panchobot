@@ -18,12 +18,12 @@ def reglas_grupos(message):
   bot.reply_to(message, reglas)
 
 
-@bot.message_handler(commands=['id','miid'])
+@bot.message_handler(commands=['id'])
 def miid(message):
   cid = message.chat.id     
   nombreUsuario = message.from_user.username  
   idUsuario = message.from_user
-  bot.reply_to(message, "tu id " + str(nombreUsuario) + " es " + str(message_id))
+  bot.reply_to(message, "chat id " + str(cid))
 
 
 
