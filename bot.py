@@ -23,7 +23,7 @@ def miid(message):
   cid = message.chat.id     
   nombreUsuario = message.from_user.username  
   idUsuario = message.from_user
-  bot.reply_to(message, "tu id " + str(nombreUsuario) + " es " + str(cid))
+  bot.reply_to(message, "tu id " + str(nombreUsuario) + " es " + str(message_id))
 
 
 
