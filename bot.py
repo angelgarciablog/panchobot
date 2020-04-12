@@ -28,9 +28,9 @@ def miid(message):
 @bot.message_handler(func=lambda message: True)
 def echo_message(message):
   cid = message.chat.id
-  idgrupo = "1001409931709"
-  miid = "530270550"
-  if  message.text.lower().startswith('bot di') and cid == miid:                 
+  idgrupo = 1001409931709
+  miid = 530270550
+  if  message.text.lower().startswith('bot di') and cid == miid :                 
     mensaje=message.text                              
     respuesta = ' '.join(mensaje.split(" ")[2:])   
     bot.send_message(idgrupo, respuesta)  
