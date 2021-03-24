@@ -5,7 +5,7 @@ from os import environ
 import time
 
 
-bot = telebot.TeleBot('716415124:AAHxlPYPjpx8BV5TpV6cUDqlE4aqaKoEYwc')  # Creamos el objeto de nuestro bot.
+bot = telebot.TeleBot('716415124:xxxxxxxxx')  # borra lo que esta dentro de las comillas y pega el token generado con botFather.(las comillas no las borres xd)
 
 #bot = telebot.TeleBot(environ['TELEGRAM_TOKEN'])
 
