@@ -22,7 +22,7 @@ pip install -r requirements.txt
 
 
 ```
-#Ejecutar
+## Ejecutar
 Antes de ejecutar abre el archivo botadmin.py y cambia el token , guarda cambio y ejecuta 
 ```
 python botadmin.py
