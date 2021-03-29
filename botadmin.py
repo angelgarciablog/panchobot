@@ -4,7 +4,7 @@ import datetime
 from os import environ
 import time
 
-#comentario de prueva
+
 bot = telebot.TeleBot('716415124:xxxxxxxxx')  # borra lo que esta dentro de las comillas y pega el token generado con botFather.(las comillas no las borres xd)
 
 #bot = telebot.TeleBot(environ['TELEGRAM_TOKEN'])
